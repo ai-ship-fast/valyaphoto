@@ -2,19 +2,20 @@ import type { Metadata } from 'next';
 import Gallery, { type GalleryItem } from '@/components/Gallery';
 import CtaBlock from '@/components/CtaBlock';
 import TgButton from '@/components/TgButton';
+import { IMG } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'Свадьба — Валентина Головко',
 };
 
 const items: GalleryItem[] = [
-  { src: '/img/wed-forest-lead.jpg', w: 1200, h: 1800, alt: 'Свадьба — в лесу', caption: 'Хвойная тайга' },
-  { src: '/img/wed-laugh.jpg', w: 1200, h: 1800, alt: 'Свадьба — эмоция', caption: 'Искренний смех' },
-  { src: '/img/wed-rings.jpg', w: 1200, h: 1800, alt: 'Свадьба — кольца', caption: 'Детали' },
-  { src: '/img/wed-lift.jpg', w: 1200, h: 1800, alt: 'Свадьба — пара', caption: 'Вдвоём' },
-  { src: '/img/wed-groom-tie.jpg', w: 1200, h: 1800, alt: 'Свадьба — сборы', caption: 'Сборы' },
-  { src: '/img/wed-veil.jpg', w: 1200, h: 1800, alt: 'Свадьба — фата', caption: 'Фата' },
-  { src: '/img/wed-ivy.jpg', w: 1200, h: 1800, alt: 'Свадьба — портрет невесты', caption: 'Среди зелени' },
+  { src: IMG.wedForestLead, alt: 'Свадьба — в лесу', caption: 'Хвойная тайга' },
+  { src: IMG.wedLaugh, alt: 'Свадьба — эмоция', caption: 'Искренний смех' },
+  { src: IMG.wedRings, alt: 'Свадьба — кольца', caption: 'Детали' },
+  { src: IMG.wedLift, alt: 'Свадьба — пара', caption: 'Вдвоём' },
+  { src: IMG.wedGroomTie, alt: 'Свадьба — сборы', caption: 'Сборы' },
+  { src: IMG.wedVeil, alt: 'Свадьба — фата', caption: 'Фата' },
+  { src: IMG.wedIvy, alt: 'Свадьба — портрет невесты', caption: 'Среди зелени' },
   { placeholder: true },
 ];
 

@@ -3,11 +3,12 @@ import Link from 'next/link';
 import TgButton from '@/components/TgButton';
 import CtaBlock from '@/components/CtaBlock';
 import { TG } from '@/lib/site';
+import { IMG } from '@/lib/images';
 
 const categories = [
-  { href: '/reportage', img: '/img/rep-stretch.jpg', title: 'Репортаж', n: '01', desc: 'Балет, события, живые серии', alt: 'Репортаж' },
-  { href: '/portrait', img: '/img/portrait-dancer.jpg', title: 'Портрет', n: '02', desc: 'Характер и настроение', alt: 'Портрет' },
-  { href: '/wedding', img: '/img/wed-veil.jpg', title: 'Свадьба', n: '03', desc: 'Тёплые истории пары', alt: 'Свадьба' },
+  { href: '/reportage', img: IMG.repStretch, title: 'Репортаж', n: '01', desc: 'Балет, события, живые серии', alt: 'Репортаж' },
+  { href: '/portrait', img: IMG.portraitDancer, title: 'Портрет', n: '02', desc: 'Характер и настроение', alt: 'Портрет' },
+  { href: '/wedding', img: IMG.wedVeil, title: 'Свадьба', n: '03', desc: 'Тёплые истории пары', alt: 'Свадьба' },
 ];
 
 export default function HomePage() {
@@ -33,10 +34,11 @@ export default function HomePage() {
         </div>
         <div className="hero-r">
           <Image
-            src="/img/valentina.jpg"
+            src={IMG.valentina}
             alt="Валентина Головко, фотограф"
             fill
             priority
+            placeholder="blur"
             sizes="(max-width:760px) 100vw, 50vw"
           />
           <div className="fcap">Приморье · 2026</div>
@@ -52,7 +54,13 @@ export default function HomePage() {
           {categories.map((c) => (
             <Link key={c.href} className="cat" href={c.href}>
               <div className="ph">
-                <Image src={c.img} alt={c.alt} fill sizes="(max-width:760px) 100vw, 33vw" />
+                <Image
+                  src={c.img}
+                  alt={c.alt}
+                  fill
+                  placeholder="blur"
+                  sizes="(max-width:760px) 100vw, 33vw"
+                />
               </div>
               <div className="cat-foot">
                 <h3>{c.title}</h3>

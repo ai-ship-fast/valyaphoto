@@ -21,6 +21,15 @@ export default function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open]);
+
   const navLinks = (onClick?: () => void) =>
     NAV.map((p) => (
       <Link
@@ -46,7 +55,9 @@ export default function SiteHeader() {
           </a>
           <button
             className={open ? 'burger x' : 'burger'}
-            aria-label="Меню"
+            aria-label={open ? 'Закрыть меню' : 'Открыть меню'}
+            aria-expanded={open}
+            aria-controls="mobile-drawer"
             onClick={() => setOpen((v) => !v)}
           >
             <span />
@@ -56,7 +67,11 @@ export default function SiteHeader() {
         </div>
       </header>
 
-      <div className={open ? 'drawer open' : 'drawer'}>
+      <div
+        id="mobile-drawer"
+        className={open ? 'drawer open' : 'drawer'}
+        aria-hidden={!open}
+      >
         {navLinks(() => setOpen(false))}
         <a
           className="dig"

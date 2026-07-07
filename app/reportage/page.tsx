@@ -2,16 +2,17 @@ import type { Metadata } from 'next';
 import Gallery, { type GalleryItem } from '@/components/Gallery';
 import CtaBlock from '@/components/CtaBlock';
 import TgButton from '@/components/TgButton';
+import { IMG } from '@/lib/images';
 
 export const metadata: Metadata = {
   title: 'Репортаж — Валентина Головко',
 };
 
 const items: GalleryItem[] = [
-  { src: '/img/rep-barre.jpg', w: 1800, h: 1200, alt: 'Репортаж — балет у станка', caption: 'У станка' },
-  { src: '/img/rep-boy.jpg', w: 1200, h: 1800, alt: 'Репортаж — портрет в зале', caption: 'Перед выходом' },
-  { src: '/img/rep-hands.jpg', w: 1800, h: 1200, alt: 'Репортаж — детали', caption: 'Детали' },
-  { src: '/img/rep-stretch.jpg', w: 1800, h: 1200, alt: 'Репортаж — растяжка', caption: 'Разминка' },
+  { src: IMG.repBarre, alt: 'Репортаж — балет у станка', caption: 'У станка' },
+  { src: IMG.repBoy, alt: 'Репортаж — портрет в зале', caption: 'Перед выходом' },
+  { src: IMG.repHands, alt: 'Репортаж — детали', caption: 'Детали' },
+  { src: IMG.repStretch, alt: 'Репортаж — растяжка', caption: 'Разминка' },
   { placeholder: true },
   { placeholder: true },
 ];

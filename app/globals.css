@@ -124,6 +124,24 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   display:flex;align-items:center;justify-content:center;text-align:center;color:#a59e8d;
   font-size:12px;letter-spacing:.18em;text-transform:uppercase}
 
+.gal-btn{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in;color:inherit}
+
+/* ---------- LIGHTBOX ---------- */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(21,19,14,.94);
+  display:flex;align-items:center;justify-content:center;animation:lbfade .25s ease}
+@keyframes lbfade{from{opacity:0}to{opacity:1}}
+.lb-figure{position:relative;display:flex;flex-direction:column;align-items:center;gap:14px}
+.lb-figure img{display:block;object-fit:contain}
+.lb-figure figcaption{color:#fff;font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.85}
+.lb-close{position:fixed;top:22px;right:26px;color:#fff;font-size:26px;line-height:1;
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;opacity:.75;transition:opacity .2s}
+.lb-close:hover{opacity:1}
+.lb-nav{position:fixed;top:50%;transform:translateY(-50%);color:#fff;font-size:46px;line-height:1;
+  width:56px;height:56px;display:flex;align-items:center;justify-content:center;opacity:.6;transition:opacity .2s}
+.lb-nav:hover{opacity:1}
+.lb-prev{left:14px}
+.lb-next{right:14px}
+
 /* ---------- PRICING ---------- */
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:48px}
 .plan{border:1px solid var(--line);padding:36px 30px;display:flex;flex-direction:column;background:#fff;transition:.3s}
@@ -157,6 +175,19 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .foot-in .r{display:flex;gap:26px;font-size:13px;color:var(--muted);flex-wrap:wrap}
 .foot-in .r a{transition:.2s}
 .foot-in .r a:hover{color:#000}
+
+/* ---------- 404 ---------- */
+.notfound{padding-block:120px 140px;max-width:640px}
+.notfound .crumb{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}
+.notfound h1{font-size:clamp(40px,6vw,72px);line-height:1;font-weight:600;letter-spacing:-.025em;margin-bottom:22px}
+.notfound p{font-size:16px;line-height:1.62;color:#4f4b43;max-width:440px;margin-bottom:36px;text-wrap:pretty}
+
+/* ---------- REDUCED MOTION ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
+    transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .cat:hover .ph img,.gal figure:hover img{transform:none}
+}
 
 /* ---------- RESPONSIVE ---------- */
 @media(max-width:1024px){
